@@ -1,0 +1,25 @@
+.container{
+    max-width: 650px;
+    margin: auto;
+    background-color: #fff;
+    padding: 25px;
+    padding-top: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+body{
+    background-color: #f5f5f5;
+}   
+
+.container h1{
+    color: #666;
+    margin-bottom: 0;
+}
+
+.container p{
+    margin-top: 0;
+}
+
