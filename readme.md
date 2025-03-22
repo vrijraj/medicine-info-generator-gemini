@@ -23,7 +23,7 @@ A web-based application that generates detailed information about medicines usin
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/vrijraj/medicine-info-generator-gemini.git
 ```
 
 2. Replace the API key in the code with your own Google Gemini AI API key:
