@@ -45,4 +45,4 @@ const API_KEY = "YOUR_API_KEY";
 
 
 ## Codelab
-Gradus Link: 
+Gradus Link: https://gradus.dev/labs/medicine-info-generator-using-gemini-5fQeKN
