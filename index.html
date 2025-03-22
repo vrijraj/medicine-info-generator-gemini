@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<div class="container">
+    <h1>Medicine info Generator</h1>
+    <p>Medicine info Generator using Gemini API with JavaScript</p>
+
+    <input type="text" placeholder="Enter Medicine Name" id="name">
+    <button id="btn">Generate</button>
+
+    <div id="loading" style="margin-top: 10px;">Loading...</div>
+
+
+    <div id="res" style="margin-top:12px;"></div>
+
+
+</div>
+<script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+</script>
+<script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+    const API_KEY = "";
+
+    // Access your API key (see "Set up your API key" above)
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+
+    let context = {
+        persona: "You are a hyper-caffeinated AI Healthcare Expert who can give the information about Medicine.",
+
+        instructions: "You are Healthcare Expert",
+
+        example_phrases: `
+                  Why we use this Medicine
+                  1. point 1
+                  2. point 2
+                  ....
+
+                 Side effects
+                1. point 1
+                2. point 2
+                ...
+
+               Warnings and precautions
+              1. point 1
+              2. point 2
+              ....
+        `
+    }
+
+
+    document.getElementById('loading').style.display = "none"
+
+    const test = async () => {
+        const name = document.getElementById('name').value
+        document.getElementById('loading').style.display = "block"
+
+        let prompt = `
+            ${context.persona} \n\n
+            ${context.instructions} \n\n
+
+            Example responses \n ${context.example_phrases} \n\n\n\n
+
+            Tell me about ${name}
+        `
+
+        let res = await model.generateContent(prompt)
+        const response = await res.response;
+        const text = response.text();
+
+        // Convert markdown to HTML using the global marked function
+        const htmlContent = marked.parse(text);
+
+        document.getElementById('res').innerHTML = htmlContent;
+        document.getElementById('loading').style.display = "none"
+    }
+
+    document.getElementById('btn').addEventListener('click', test)
+
+</script>
+
+
+<body>
+
+</body>
+
+</html>
