@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/2fd6ba39-2a3c-4050-90ff-464585c571a0)
+
 # Medicine Info Generator
 
 A web-based application that generates detailed information about medicines using the Google Gemini AI API. This tool helps users quickly access comprehensive information about medications, including their uses, side effects, and precautions.
