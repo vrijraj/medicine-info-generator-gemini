@@ -4,6 +4,9 @@
 
 A web-based application that generates detailed information about medicines using the Google Gemini AI API. This tool helps users quickly access comprehensive information about medications, including their uses, side effects, and precautions.
 
+## Codelab
+Gradus Link: https://gradus.dev/labs/medicine-info-generator-using-gemini-5fQeKN
+
 ## Features
 
 - 🔍 Real-time medicine information generation
