@@ -36,7 +36,7 @@
 
     // Access your API key (see "Set up your API key" above)
     const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     let context = {
         persona: "You are a hyper-caffeinated AI Healthcare Expert who can give the information about Medicine.",
